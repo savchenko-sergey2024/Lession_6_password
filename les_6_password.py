@@ -6,12 +6,7 @@ def has_digit(password):
     return any(numbers.isdigit() for numbers in password)
 
 def has_symbols(password):
-    for symbols in password:
-        symbols1 = symbols.isalpha()
-        symbols2 = symbols.isdigit()
-        if symbols1 == False and symbols2 == False:
-            return True
-    return False
+    return (symbols1 != symbols.isalpha() and symbols2 != symbols.isdigit() for symbols in password)
 
 def has_upper_letters(password):
     return any(letters_upper.isupper() for letters_upper in password)
